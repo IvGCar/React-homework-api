@@ -11,3 +11,13 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.nav-bg-custom{
+  background-color: #de8807; 
+}
+.nav-link-custom:hover {
+  background-color: #fbae3a;
+}
+.bg-card{
+  background-color: rgb(199, 199, 199);
+}
