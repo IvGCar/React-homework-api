@@ -1,4 +1,3 @@
-import React, { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import {
   BrowserRouter,
@@ -22,16 +21,16 @@ const user = {
 }
 
 root.render(
-  <BrowserRouter>
-    <UserContext.Provider value={user}>
-    <Routes>
-      <Route path="/" element={<App />} />
-      <Route path="/user" element={<UserInfo />}/>
-    </Routes>
-
-    </UserContext.Provider>
-  </BrowserRouter>
+    <BrowserRouter>
+      <UserContext.Provider value={user}>
+        <Routes>
+          <Route path="/" element={<App />} />
+          <Route path="/user" element={<UserInfo />}/>
+        </Routes>
+      </UserContext.Provider>
+    </BrowserRouter>
 );
+
 
 
 

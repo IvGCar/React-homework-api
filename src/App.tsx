@@ -2,7 +2,6 @@ import './App.css';
 import AnimeCard from './components/AnimeCard';
 import AnimeDataModel from './models/AnimeDataModel'
 import Navbar from './components/Navbar';
-import AnimeService from './service/AnimeService';
 import Pagination from './components/Pagination'
 import { useState, useEffect } from 'react';
 
