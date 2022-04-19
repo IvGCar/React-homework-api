@@ -22,6 +22,7 @@ function App() {
 
   const [animeArr, setArr] = useState<Array<AnimeDataModel>>([]);
   const [urlList, seturlList] = useState<urlList>({first:'',  prev:'',  next:'',  last:'',});  
+  const [mode, setmode] = useState('online');
 
   useEffect(()=>{          
     cardGenerator(baseUrl)
@@ -34,9 +35,13 @@ function App() {
                   setArr(data.data);
                   seturlList(data.links)
               })           
-              .catch((error)=>{console.log(error)})
+              .catch((error)=>{
+                console.log(error);
+                setmode('offline')
+              })
   }
-  
+
+
   const nextPage = () =>{cardGenerator(urlList.next)}
   const prevPage = () =>{cardGenerator(urlList.prev)}
 
@@ -45,7 +50,7 @@ function App() {
       <Navbar brand='Anime App'></Navbar> 
       <Pagination color='blue' urls={urlList} goNext={nextPage} goPrev={prevPage}></Pagination>
       <div className='container my-4'>
-        <AnimeCard color={'secondary'} cardsToMake={animeArr} />
+        <AnimeCard color={'secondary'} cardsToMake={animeArr} mode={mode}/>
       </div>
       <Pagination color='blue' urls={urlList} goNext={nextPage} goPrev={prevPage}></Pagination>
     </>   
